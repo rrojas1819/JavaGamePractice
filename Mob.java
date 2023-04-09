@@ -1,9 +1,9 @@
 import java.util.Random;
 public abstract class Mob {
 
-protected int HP;
-protected int DMG;
-protected int BLOCK;
+    protected int HP;
+    protected int DMG;
+    protected int BLOCK;
 
 
     public void setAll(int newHP, int newDMG , int newBLOCK){
@@ -74,6 +74,29 @@ protected int BLOCK;
     }
 
 
+    public void healthChecker(int currentHP, Enemy E1){
+        if(currentHP <= 0 ){
+            E1 = null;
+            System.out.println("\nYOU HAVE DEFEATED THE ENEMY!!1");
+        }
+
+
+    }
+    public void healthChecker(int currentHP, Player P1){
+        if(currentHP <= 0 ){
+
+            /*
+            Figure out to clear the screen
+
+
+             */
+            P1 = null;
+        }
+
+
+    }
+
+
 
 
 
@@ -82,9 +105,9 @@ protected int BLOCK;
 
         result = "The attributes are: " + "\nHP: "  + HP + "\nDMG: "+ DMG + "\nBLOCK: " + BLOCK;
 
-                return result;
+        return result;
 
-}
+    }
 
 
 

@@ -1,5 +1,3 @@
-import java.security.PKCS12Attribute;
-
 public class Enemy extends Mob{
 
 
@@ -11,7 +9,7 @@ public class Enemy extends Mob{
     public void Attack(Player P1){
 
 
-        if(super.Choice() == true){
+        if(super.Choice()){
             P1.SubtractHealth(DMG);
 
         }
