@@ -1,24 +1,22 @@
+
+
 public class testSite {
-    public static void main(String args[]){
-/*
-Array of attacks and evades and run away?
-
- */
-        Enemy goblin = new Enemy(10 ,  50 ,  5);
-        Player Knight = new Player(15,15,15);
-
-        System.out.println(goblin + "\n");
-
-        goblin.Attack(Knight);
+    public static void main(String[] args) {
+        Events game = new Events();
+        LayOut tab = new LayOut();
 
 
-        System.out.println(Knight + "\n");
 
-        System.out.println(goblin);
 
-        Knight.healthChecker(Knight.getHP(), Knight);
+        Mob Knight = new Player(10,10,10);
+        Mob Goblin = new Enemy(10,1,10);
+
+
+        while (game.getEventAvail()){
+            game.eventOne(Goblin,Knight,tab);
+        }
+
 
 
     }
-
 }

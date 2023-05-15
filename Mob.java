@@ -5,6 +5,11 @@ public abstract class Mob {
     protected int DMG;
     protected int BLOCK;
 
+    protected int BURN;
+    protected int POISON;
+    protected int BLEED;
+
+
 
     public void setAll(int newHP, int newDMG , int newBLOCK){
         HP = newHP;
@@ -12,28 +17,54 @@ public abstract class Mob {
         BLOCK = newBLOCK;
     }
 
-    public void SubtractHealth(int newHP){
+
+
+
+
+
+
+    public void subtractHealth(int newHP){
         HP -= newHP;
     }
 
-    public void SubtractDMG (int newDMG){
+    public void subtractDMG (int newDMG){
         DMG -= newDMG;
     }
 
-    public void SubtractBLOCK(int newBLOCK){
+    public void subtractBLOCK(int newBLOCK){
         BLOCK -= newBLOCK;
     }
-    public void AddHealth(int newHP){
+
+
+
+
+
+
+
+
+
+
+    public void addHealth(int newHP){
         HP += newHP;
     }
 
-    public void AddDMG (int newDMG){
+    public void addDMG (int newDMG){
         DMG += newDMG;
     }
 
-    public void AddBLOCK(int newBLOCK){
+    public void addBLOCK(int newBLOCK){
         BLOCK += newBLOCK;
     }
+
+
+
+
+
+
+
+
+
+
 
     public int getHP(){
         return HP;
@@ -46,55 +77,51 @@ public abstract class Mob {
     }
 
 
+
+
+
+    public void attack(Mob Mob1){
+        if(Choice()){
+            Mob1.subtractHealth(DMG);
+        }
+        else{
+            System.out.println("Failed to attack. ");
+        }
+    }
+
+
+
+
+
+
+
+
+
+
     public boolean Choice(){
         Random ran = new Random();
         int randomInt = ran.nextInt(2);
 
-        if(randomInt == 1 ){
-            return true;
-        }
-        else{
-            return false;
-        }
-
-
-    }
-    public boolean EvadeChance(){
-        Random ran = new Random();
-        int randomInt = ran.nextInt(100);
-
-        if(randomInt <= 4 ){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return randomInt == 1;
 
 
     }
 
 
-    public void healthChecker(int currentHP, Enemy E1){
-        if(currentHP <= 0 ){
-            E1 = null;
-            System.out.println("\nYOU HAVE DEFEATED THE ENEMY!!1");
-        }
 
 
-    }
-    public void healthChecker(int currentHP, Player P1){
-        if(currentHP <= 0 ){
-
-            /*
-            Figure out to clear the screen
 
 
-             */
-            P1 = null;
-        }
 
+
+    public boolean healthChecker(){
+        return HP <= 0;
 
     }
+
+
+
+
 
 
 

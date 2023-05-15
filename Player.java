@@ -8,5 +8,14 @@ public class Player extends Mob {
 
 
 
+    /*
+    Have functions that "attack" when scanner object sees "A", other that repeat what options you have and what they mean.
+
+
+     */
+
+
+
+
 
 }
